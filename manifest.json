@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "萌萌查",
+  "version": "1.0",
+  "description": "整合「萌典」資料庫的台灣正體中文快捷查詞工具",
+  "icons": {
+    "16": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+
+  "action": {
+    "default_icon": {
+      "16": "images/icon.png",
+      "48": "images/icon.png"
+    }
+  },
+  "permissions": ["sidePanel", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
